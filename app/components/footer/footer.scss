@@ -1,0 +1,156 @@
+@import "../../styles//variables.scss";
+
+.footer {
+	background-color: $background-color;
+	min-height: 225px;
+	margin-top: -2px;
+	&__wrapper {
+		display: flex;
+		flex-direction: row;
+		align-items: flex-start;
+		justify-content: space-between;
+		flex-wrap: wrap;
+		width: 100%;
+		padding: 50px 100px;
+	}
+	&__nav {
+		&-list {
+			list-style: none;
+			display: flex;
+			flex-direction: row;
+			li {
+				margin-right: 60px;
+				a {
+					text-decoration: none;
+					font-family: $secondary-color;
+					font-style: normal;
+					font-weight: 500;
+					font-size: 14px;
+					line-height: 18px;
+					color: $secondary-color;
+					&:hover {
+						cursor: pointer;
+						color: $primary-color;
+					}
+				}
+			}
+			&-sublist {
+				list-style: none;
+				display: flex;
+				flex-direction: column;
+				margin-left: -32px;
+				margin-top: 17px;
+				li {
+					a {
+						text-decoration: none;
+						font-family: $encode-font;
+						font-style: normal;
+						font-weight: 500;
+						font-size: 10px;
+						line-height: 12px;
+						color: rgba(255, 255, 255, 0.6);
+					}
+				}
+			}
+		}
+		&-services-list {
+			margin-left: -60px;
+		}
+	}
+	&__contacts {
+		display: flex;
+		flex-direction: row;
+		&-social {
+			display: flex;
+			flex-direction: row;
+			cursor: pointer;
+			&-item {
+				margin: 0 20px;
+				width: 24px;
+				height: 24px;
+			}
+		}
+		&-button {
+			background: #d7b068;
+			border-radius: 2px 25px 2px 15px;
+			padding: 10px 53px;
+			font-family: $secondary-color;
+			font-style: normal;
+			font-weight: 500;
+			font-size: 18px;
+			line-height: 22px;
+			color: #000000;
+			white-space: nowrap;
+			text-align: center;
+			min-width: fit-content;
+		}
+	}
+	&__mobile-social {
+		display: none;
+	}
+}
+
+@media screen and (max-width: 767px) {
+	.footer {
+		height: fit-content;
+		.footer__wrapper {
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			justify-content: center;
+		}
+		&__logo {
+			margin: 29px 0 23px 0;
+		}
+		&__mobile-social {
+			display: flex;
+			flex-direction: row;
+			cursor: pointer;
+			margin-bottom: 37px;
+			&-item {
+				margin: 0 20px;
+				width: 24px;
+				height: 24px;
+			}
+		}
+		&__nav {
+			&-list {
+				display: flex;
+				flex-direction: column;
+				justify-content: center;
+				align-items: center;
+				padding-left: 0px;
+				> li {
+					margin-right: 0;
+					text-align: center;
+					padding-bottom: 20px;
+				}
+				&-sublist {
+					display: flex;
+					flex-direction: column;
+					margin-left: none;
+					justify-content: center;
+					align-items: center;
+					li {
+						margin-right: 0;
+						text-align: center;
+					}
+				}
+			}
+			&-services-list {
+				margin-left: 0px;
+			}
+		}
+		&__contacts {
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			&-social {
+				display: none;
+			}
+			&-button {
+				margin-top: 5px;
+			}
+		}
+	}
+}

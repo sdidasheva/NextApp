@@ -1,0 +1,141 @@
+@import "../../styles/variables.scss";
+
+.gallery {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	background-color: $background-color;
+	padding-bottom: 70px;
+	&__wrapper {
+		width: 100%;
+		> h2 {
+			text-align: center;
+		}
+	}
+	&__slide {
+		margin: 0 5px;
+	}
+
+	.swiper {
+		overflow-x: hidden;
+		padding-bottom: 90px;
+		&-slide {
+			filter: blur(10px);
+			transform: scale(0.8);
+			&-active,
+			&-next,
+			&-prev {
+				filter: none;
+				transform: none;
+			}
+			&-prev {
+				margin-left: -35px;
+			}
+			&-next {
+				margin-right: -35px;
+			}
+		}
+		&-pagination {
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			&-bullet {
+				background-color: #e2e2e2;
+				opacity: 1;
+				vertical-align: middle;
+				width: 13px;
+				height: 13px;
+				&-active {
+					background-color: transparent;
+					width: 27px;
+					height: 27px;
+					border: 6px solid $primary-color;
+				}
+			}
+		}
+		&-button-prev,
+		&-button-next {
+			background-repeat: no-repeat;
+			background-size: contain;
+			background-position: center;
+			margin-top: 13%;
+			width: 57px;
+			cursor: pointer;
+			&::after {
+				display: none;
+			}
+		}
+		&-button-prev {
+			background-image: url(../../../public/assets/images/arrow-left.svg);
+			margin-left: 38%;
+		}
+		&-button-next {
+			background-image: url(../../../public/assets/images/arrow-right.svg);
+			margin-right: 38%;
+		}
+	}
+}
+
+@media screen and (max-width: 1024px) and (min-width: 768px) {
+	.gallery {
+		.swiper {
+			&-slide {
+				filter: blur(10px);
+				transform: scale(0.8);
+				&-active {
+					filter: none;
+					transform: none;
+				}
+				&-prev {
+					margin-right: -35px;
+					margin-left: 3px;
+				}
+				&-next {
+					margin-left: -35px;
+				}
+			}
+			&-button-prev,
+			&-button-next {
+				margin-top: 25%;
+			}
+			&-button-prev {
+				margin-left: 33%;
+			}
+			&-button-next {
+				margin-right: 33%;
+			}
+		}
+	}
+}
+
+@media screen and (max-width: 767px) {
+	.gallery {
+		.swiper {
+			&-slide {
+				filter: blur(10px);
+				transform: scale(0.8);
+				&-active {
+					filter: none;
+					transform: none;
+				}
+				&-prev {
+					margin-right: -35px;
+					margin-left: 1px;
+				}
+				&-next {
+					margin-left: -35px;
+				}
+			}
+			&-button-prev,
+			&-button-next {
+				margin-top: 26%;
+			}
+			&-button-prev {
+				margin-left: 25%;
+			}
+			&-button-next {
+				margin-right: 25%;
+			}
+		}
+	}
+}

@@ -1,0 +1,176 @@
+@import "../../styles//variables.scss";
+
+.services {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	background-color: $background-color;
+	margin-top: -8px;
+	padding-left: 30px;
+	padding-right: 30px;
+	&__wrapper {
+		max-width: 1400px;
+		width: 100%;
+	}
+	&__packages {
+		display: flex;
+		flex-direction: row;
+		justify-content: center;
+		align-items: center;
+		flex-wrap: wrap;
+		&-item {
+			width: 349px;
+			height: 438px;
+			cursor: pointer;
+			&--1 {
+				background: url("../../../public/assets/images/package1.png") center
+					no-repeat;
+			}
+			&--2 {
+				background: url("../../../public/assets/images/package2.png") center
+					no-repeat;
+			}
+			&--3 {
+				background: url("../../../public/assets/images/package3.png") center
+					no-repeat;
+			}
+			&--4 {
+				background: url("../../../public/assets/images/package4.png") center
+					no-repeat;
+			}
+			&-title {
+				font-family: $prompt-font;
+				font-style: normal;
+				font-weight: 500;
+				font-size: 36px;
+				line-height: 54px;
+				color: $secondary-color;
+				padding: 23px 0px 0px 41px;
+			}
+			&-arrow {
+				padding-left: 41px;
+			}
+		}
+		&-modal {
+			display: flex;
+			flex-direction: row;
+			background-color: #fff;
+			&-title {
+				font-family: $prompt-font;
+				font-style: normal;
+				font-weight: 500;
+				font-size: 36px;
+				line-height: 54px;
+				color: $secondary-color;
+				height: 90vh;
+				max-width: 353px;
+				width: 100%;
+				background: url("../../../public/assets/images/modal-image1.jpg") 0 0 /
+					cover no-repeat;
+				text-align: center;
+				padding-top: 33px;
+			}
+			&-info {
+				display: flex;
+				flex-direction: column;
+				justify-content: center;
+				align-items: center;
+				max-width: calc(100% - 353px);
+				width: 100%;
+				height: calc(90vh - 166px);
+				margin: 83px 30px;
+				&-text {
+					max-width: 800px;
+					width: 100%;
+					font-family: $encode-font;
+					font-style: normal;
+					font-weight: 400;
+					font-size: 16px;
+					line-height: 28px;
+					color: #000000;
+				}
+			}
+		}
+		&-mobile {
+			display: none;
+		}
+	}
+}
+
+@media screen and (max-width: 1024px) {
+	.services {
+		&__packages {
+			&-modal {
+				display: flex;
+				flex-direction: column;
+				justify-content: center;
+				align-items: center;
+				&-title {
+					height: 10vh;
+					background: url("../../../public/assets/images/modal-image1.jpg") top /
+						100% auto no-repeat;
+					text-align: center;
+					padding-top: 15px;
+				}
+				&-info {
+					display: flex;
+					flex-direction: column;
+					justify-content: center;
+					align-items: center;
+					margin: 30px 20px;
+					max-width: 800px;
+					width: 90%;
+					height: fit-content;
+				}
+			}
+		}
+	}
+}
+
+@media screen and (max-width: 767px) {
+	.services {
+		&__title {
+			text-align: center;
+		}
+		&__packages {
+			display: none;
+			&-swiper {
+				height: 500px;
+			}
+			&-item {
+				margin: auto;
+				&-title {
+					font-size: 24px;
+					line-height: 36px;
+					padding: 23px 0px 0px 43px;
+				}
+				&-arrow {
+					display: none;
+				}
+			}
+			&-mobile {
+				display: block;
+			}
+		}
+		.swiper-pagination {
+			display: flex;
+			justify-content: center;
+			align-items: center;
+		}
+		.swiper-pagination-bullet {
+			width: 119px;
+			height: 1px;
+			background-color: white;
+			border-radius: 0;
+			vertical-align: middle;
+			color: #b4b4b4;
+			display: flex;
+			flex-direction: row;
+			flex-wrap: wrap-reverse;
+			&-active {
+				height: 4px;
+				color: $secondary-color;
+			}
+		}
+	}
+}

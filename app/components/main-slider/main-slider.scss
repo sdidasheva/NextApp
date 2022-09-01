@@ -1,0 +1,135 @@
+@import "../../styles//variables.scss";
+
+.main-slider {
+	width: 100%;
+	height: fit-content;
+	&__swiper {
+		width: 100%;
+		height: 100%;
+	}
+	.swiper-pagination {
+		display: flex;
+		justify-content: flex-start;
+		align-items: center;
+		margin-left: 13%;
+		margin-bottom: 6%;
+	}
+	.swiper-pagination-bullet {
+		width: 119px;
+		height: 1px;
+		background-color: white;
+		border-radius: 0;
+		vertical-align: middle;
+		color: #b4b4b4;
+		display: flex;
+		flex-direction: row;
+		flex-wrap: wrap-reverse;
+		&-active {
+			height: 4px;
+			color: $secondary-color;
+		}
+	}
+	&__slide {
+		position: relative;
+		&-info {
+			position: absolute;
+			top: 20%;
+			left: 13%;
+			display: flex;
+			flex-direction: column;
+			justify-content: flex-start;
+			align-items: flex-start;
+			max-width: 800px;
+			width: 100%;
+			text-align: center;
+			&-title {
+				font-family: $prompt-font;
+				font-style: normal;
+				font-weight: 700;
+				font-size: 96px;
+				line-height: 145px;
+				color: $primary-color;
+			}
+			&-text {
+				padding: 26px 42px;
+				background-color: rgba(0, 0, 0, 0.6);
+				backdrop-filter: blur(9px);
+				font-family: $encode-font;
+				font-style: normal;
+				font-weight: 400;
+				font-size: 16px;
+				line-height: 30px;
+				color: $secondary-color;
+				max-width: 743px;
+			}
+		}
+	}
+}
+@media screen and (min-width: 767px) and (max-width: 1023px) {
+	.main-slider {
+		&__swiper {
+			width: 100%;
+		}
+		.swiper-pagination {
+			margin-bottom: 10px;
+			justify-content: center;
+			margin-left: 0px;
+		}
+		&__slide {
+			&-info {
+				position: absolute;
+				left: 4%;
+				display: flex;
+				flex-direction: column;
+				justify-content: center;
+				align-items: center;
+				max-width: 700px;
+				&-title {
+					font-size: 60px;
+					line-height: 88px;
+					text-align: center;
+				}
+				&-text {
+					font-size: 15px;
+					line-height: 25px;
+				}
+			}
+		}
+	}
+}
+@media screen and (max-width: 767px) {
+	.main-slider {
+		&__swiper {
+			width: 100%;
+		}
+		.swiper-pagination {
+			margin-bottom: 5px;
+			justify-content: center;
+			margin-left: 0px;
+		}
+		&__slide {
+			position: relative;
+			&-info {
+				position: absolute;
+				top: 10%;
+				left: 0;
+				display: flex;
+				flex-direction: column;
+				justify-content: center;
+				align-items: center;
+				max-width: 750px;
+				text-align: center;
+				&-title {
+					font-size: 46px;
+					line-height: 68px;
+				}
+				&-text {
+					padding: 18px 19px;
+					font-size: 13px;
+					line-height: 19px;
+					margin: 0 30px;
+				}
+			}
+		}
+	}
+}
